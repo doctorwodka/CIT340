@@ -15,7 +15,7 @@ public class ButtonFunctions : MonoBehaviour
         SceneManager.LoadScene("HowToPlay");
     }
 
-    public void GoBacky()
+    public void Menu()
     {
         SceneManager.LoadScene("Menu");
     }
