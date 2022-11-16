@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
     bool isJumping = false;
 
     Rigidbody2D rb;
-    Animator anim;
     SpriteRenderer sr;
 
     static Player playerReference;
@@ -22,7 +21,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
         if (playerReference == null)
@@ -64,15 +62,6 @@ public class Player : MonoBehaviour
                 break;
             }
 
-        }
-
-        if (rb.velocity.magnitude > 0.05f)
-        {
-            anim.SetBool("isMoving", true);
-        }
-        else
-        {
-            anim.SetBool("isMoving", false);
         }
 
         if (rb.velocity.x < 0)
