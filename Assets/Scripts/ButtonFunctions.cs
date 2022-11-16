@@ -20,6 +20,11 @@ public class ButtonFunctions : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     public void Exit()
     {
     #if UNITY_EDITOR
