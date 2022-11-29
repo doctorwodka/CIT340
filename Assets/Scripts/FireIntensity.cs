@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class FireIntensity : MonoBehaviour
 {
-    Light2D thisLight;
+    public Light2D thisLight;
 
-    float intensityDecreaseBy = 0.001f;
+
+    float intensityDecreaseBy = 0.01f;
     float innerRadiusDecreaseBy = 0.005f;
     float outerRadiusDecreaseBy = 0.009f;
 
     // Start is called before the first frame update
     void Start()
     {
+
         thisLight = GetComponent<Light2D>();
         thisLight.intensity = 1;
         thisLight.pointLightInnerRadius = 2.5f;

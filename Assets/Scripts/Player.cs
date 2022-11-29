@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
@@ -15,11 +17,16 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
 
-    static Player playerReference;
+    public static Player playerReference;
+
+
+
 
     // Start is called before the first frame update
     private void Start()
     {
+
+
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
 
@@ -73,6 +80,16 @@ public class Player : MonoBehaviour
             sr.flipX = false;
         }
 
+    }
+
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            SceneManager.LoadScene("Died");
+        }
     }
 
 }
