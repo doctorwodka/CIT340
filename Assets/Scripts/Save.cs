@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.GraphicsBuffer;
 
 public class Save : MonoBehaviour
 {
     // Start is called before the first frame update
 
     public Camera cam;
-    public void Awake()
+    public GameObject savedObject;
+    public void Start()
     {
         Scene scene = SceneManager.GetActiveScene();
 
@@ -18,12 +20,18 @@ public class Save : MonoBehaviour
             cam = Camera.main;
 
         }
+        
 
-        DontDestroyOnLoad(this);
+
+        DontDestroyOnLoad(savedObject);
 
         if (scene.name == "Menu" || scene.name == "Credits" || scene.name == "Won" || scene.name == "Died")
         {
-            Destroy(this);
+            SceneManager.MoveGameObjectToScene(savedObject, SceneManager.GetSceneByName("Won"));
+            
+            SceneManager.UnloadSceneAsync("DontDestroyOnLoad");
+
+            Destroy(savedObject);
         }
     }
 
