@@ -15,10 +15,10 @@ public class Player : MonoBehaviour
     bool isJumping = false;
 
     Rigidbody2D rb;
+    Animator anim;
     SpriteRenderer sr;
 
     public static Player playerReference;
-
 
 
 
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         if (playerReference == null)
         {
@@ -71,6 +72,16 @@ public class Player : MonoBehaviour
 
         }
 
+        if (rb.velocity.magnitude > 0.05f)
+        {
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+        }
+
+
         if (rb.velocity.x < 0)
         {
             sr.flipX = true;
@@ -80,7 +91,10 @@ public class Player : MonoBehaviour
             sr.flipX = false;
         }
 
+
     }
+
+
 
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -90,6 +104,7 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("Died");
         }
+
     }
 
 }

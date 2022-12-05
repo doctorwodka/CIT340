@@ -8,8 +8,13 @@ public class Follow : MonoBehaviour
     public float lerpPerFrame = 0.1f;
     public bool lockYAxis = false;
     // Update is called once per frame
+
+
+
     void Update()
     {
+        
+        
         Vector3 objPos = objectToFollow.transform.position;
 
         objPos.z = transform.position.z;

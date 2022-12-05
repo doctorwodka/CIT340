@@ -8,6 +8,9 @@ TagManager:
   - Light
   - Plant
   - Enemy
+  - Environment
+  - Flag
+  - PlayerFire
   layers:
   - Default
   - TransparentFX

@@ -28,6 +28,11 @@ public class MoveAndRotate : MonoBehaviour
         {
             targetTransform = GameObject.FindWithTag("Player").transform;
         }
+
+        if (fireObject == null)
+        {
+            fireObject = targetObject.transform.GetChild(1).gameObject;
+        }
     }
 
 
@@ -35,7 +40,7 @@ public class MoveAndRotate : MonoBehaviour
     {
         Vector3 scale = transform.localScale;
 
-        if (fireObject.GetComponent<FireIntensity>().thisLight.intensity >= 0.8f)
+        if (GameObject.Find("FireTEMP").GetComponent<FireIntensity>().thisLight.intensity >= 0.8f)
         {
             //move toward target
             Vector3 directionVector = targetTransform.position - transform.position;

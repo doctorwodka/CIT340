@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreTime : MonoBehaviour
 {
-    float score = 0;
+    float score;
     public Text scoreText;
     float pointIncreasePerSecond;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        score = 0;
-        scoreText.text = "Time Alive: 0 seconds";
+        if (scoreText == null)
+        {
+            scoreText = GetComponent<Text>();
+        }
+
+        scoreText.text = "Time Alive: ";
         pointIncreasePerSecond = 1;
     }
 

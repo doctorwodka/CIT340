@@ -1855,11 +1855,16 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Level terrain: Mossy Cavern by Maaot on itch.io
 
+
     Music: Adventure
     by Alexander Nakarada | https://www.serpentsoundstudios.com
 
     (Music promoted
-    by https://www.chosic.com/free-music/all/)'
+    by https://www.chosic.com/free-music/all/)
+
+
+    Fire Crackle & Cave Sounds:
+    Butterfly by pudretediablo on itch.io'
 --- !u!222 &993935278
 CanvasRenderer:
   m_ObjectHideFlags: 0
